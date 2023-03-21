@@ -6,8 +6,7 @@ import java.awt.geom.AffineTransform;
 /**
  * Ein Stuhl, der manipuliert werden kann und sich selbst auf einer Leinwand zeichnet.
  */
-public class Stuhl extends Möbel
-{
+public class Stuhl {
     private int xPosition;
     private int yPosition;
     private int orientierung;

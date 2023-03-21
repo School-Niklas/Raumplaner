@@ -6,8 +6,7 @@ import java.awt.geom.Ellipse2D;
 /**
  * Ein Tisch, der manipuliert werden kann und sich selbst auf einer Leinwand zeichnet.
  */
-public class Tisch extends Möbel
-{
+public class Tisch {
     private int xPosition;
     private int yPosition;
     private int orientierung;

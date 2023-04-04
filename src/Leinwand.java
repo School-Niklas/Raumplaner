@@ -16,17 +16,17 @@ import javax.swing.JPanel;
 
 /**
  * Leinwand ist eine Klasse, die einfache Zeichenoperationen auf einer
- * leinwandartigen Zeichenflï¿½che ermï¿½glicht.
- * Sie ist eine vereinfachte Version der Klasse Canvas (englisch fï¿½r 
- * Leinwand) des JDK und wurde speziell fï¿½r das Projekt "Figuren"
+ * leinwandartigen Zeichenfläche ermöglicht.
+ * Sie ist eine vereinfachte Version der Klasse Canvas (englisch für 
+ * Leinwand) des JDK und wurde speziell für das Projekt "Figuren"
  * geschrieben.
  * 
  *
  * @author: Bruce Quig
- * @author: Michael Kï¿½lling (mik)
+ * @author: Michael Kölling (mik)
  * @author: Axel Schmolitzky
  * 
- * @author: ï¿½nderungen von
+ * @author: Änderungen von
  * @Java-MS Groupies
  * @hier: Uwe Debacher
  *
@@ -35,17 +35,17 @@ import javax.swing.JPanel;
 public class Leinwand
 {
   // Hinweis: Die Implementierung dieser Klasse (insbesondere die
-  // Verwaltung der Farben und Identitï¿½ten der Figuren) ist etwas
+  // Verwaltung der Farben und Identitäten der Figuren) ist etwas
   // komplizierter als notwendig. Dies ist absichtlich so, weil damit 
   // die Schnittstellen und Exemplarvariablen der Figuren-Klassen
-  // fï¿½r den Lernanspruch dieses Projekts einfacher und klarer
-  // sein kï¿½nnen.
+  // für den Lernanspruch dieses Projekts einfacher und klarer
+  // sein können.
 
   private static Leinwand leinwandSingleton;
 
   /**
    * Fabrikmethode, die eine Referenz auf das einzige Exemplar
-   * dieser Klasse zurï¿½ckliefert. Wenn es von einer Klasse nur
+   * dieser Klasse zurückliefert. Wenn es von einer Klasse nur
    * genau ein Exemplar gibt, wird dieses als 'Singleton'
    * bezeichnet.
    */
@@ -54,7 +54,7 @@ public class Leinwand
     if (leinwandSingleton == null)
     {
       leinwandSingleton =
-        new Leinwand("Mï¿½belprojekt Grafik", 400, 400, Color.white);
+        new Leinwand("Möbelprojekt Grafik", 400, 400, Color.white);
     }
     leinwandSingleton.setzeSichtbarkeit(true);
     return leinwandSingleton;
@@ -73,11 +73,11 @@ public class Leinwand
   /**
    * Erzeuge eine Leinwand.
    * @param titel  Titel, der im Rahmen der Leinwand angezeigt wird
-   * @param breite  die gewï¿½nschte Breite der Leinwand
-   * @param hoehe  die gewï¿½nschte Hï¿½he der Leinwand
+   * @param breite  die gewünschte Breite der Leinwand
+   * @param hoehe  die gewünschte Höhe der Leinwand
    * @param grundfarbe die Hintergrundfarbe der Leinwand
    */
-  Leinwand(String titel, int breite, int hoehe, Color grundfarbe)
+  private Leinwand(String titel, int breite, int hoehe, Color grundfarbe)
   {
     fenster = new JFrame();
     zeichenflaeche = new Zeichenflaeche();
@@ -98,14 +98,14 @@ public class Leinwand
    * Vordergrund geholt. Diese Operation kann auch benutzt werden, um 
    * ein bereits sichtbares Leinwandfenster in den Vordergrund (vor
    * andere Fenster) zu holen.
-   * @param sichtbar boolean fï¿½r die gewï¿½nschte Sichtbarkeit: 
-   * true fï¿½r sichtbar, false fï¿½r nicht sichtbar.
+   * @param sichtbar boolean für die gewünschte Sichtbarkeit: 
+   * true für sichtbar, false für nicht sichtbar.
    */
   public void setzeSichtbarkeit(boolean sichtbar)
   {
     if (graphic == null)
     {
-      // erstmaliger Aufruf: erzeuge das Bildschirm-Image und fï¿½lle
+      // erstmaliger Aufruf: erzeuge das Bildschirm-Image und fülle
       // es mit der Hintergrundfarbe
       Dimension size = zeichenflaeche.getSize();
       leinwandImage = zeichenflaeche.createImage(size.width, size.height);
@@ -118,18 +118,18 @@ public class Leinwand
   }
 
   /**
-   * Zeichne fï¿½r das gegebene Figur-Objekt eine Java-Figur (einen Shape)
+   * Zeichne für das gegebene Figur-Objekt eine Java-Figur (einen Shape)
    * auf die Leinwand.
-   * @param  figur  das Figur-Objekt, fï¿½r das ein Shape gezeichnet
+   * @param  figur  das Figur-Objekt, für das ein Shape gezeichnet
    *                 werden soll
    * @param  farbe  die Farbe der Figur
-   * @param  shape  ein Objekt der Klasse Shape, das tatsï¿½chlich
+   * @param  shape  ein Objekt der Klasse Shape, das tatsächlich
    *                 gezeichnet wird
    */
   public void zeichne(Object figur, String farbe, Shape shape)
   {
     figuren.remove(figur); // entfernen, falls schon eingetragen
-    figuren.add(figur); // am Ende hinzufï¿½gen
+    figuren.add(figur); // am Ende hinzufügen
     figurZuShape.put(figur, new ShapeMitFarbe(shape, farbe));
     erneutZeichnen();
   }
@@ -170,9 +170,9 @@ public class Leinwand
   }
 
   /**
-   * Warte fï¿½r die angegebenen Millisekunden.
-   * Mit dieser Operation wird eine Verzï¿½gerung definiert, die
-   * fï¿½r animierte Zeichnungen benutzt werden kann.
+   * Warte für die angegebenen Millisekunden.
+   * Mit dieser Operation wird eine Verzögerung definiert, die
+   * für animierte Zeichnungen benutzt werden kann.
    * @param  millisekunden die zu wartenden Millisekunden
    */
   public void warte(int millisekunden)
@@ -201,7 +201,7 @@ public class Leinwand
   }
 
   /**
-   * Lï¿½sche die gesamte Leinwand.
+   * Lösche die gesamte Leinwand.
    */
   private void loeschen()
   {
@@ -213,9 +213,9 @@ public class Leinwand
   }
 
   /************************************************************************
-   * Interne Klasse Zeichenflaeche - die Klasse fï¿½r die GUI-Komponente,
-   * die tatsï¿½chlich im Leinwand-Fenster angezeigt wird. Diese Klasse
-   * definiert ein JPanel mit der zusï¿½tzlichen Mï¿½glichkeit, das auf ihm
+   * Interne Klasse Zeichenflaeche - die Klasse für die GUI-Komponente,
+   * die tatsächlich im Leinwand-Fenster angezeigt wird. Diese Klasse
+   * definiert ein JPanel mit der zusätzlichen Möglichkeit, das auf ihm
    * gezeichnet Image aufzufrischen (erneut zu zeichnen).
    */
   private class Zeichenflaeche extends JPanel
@@ -228,7 +228,7 @@ public class Leinwand
 
   /************************************************************************
    * Interne Klasse ShapeMitFarbe - Da die Klasse Shape des JDK nicht auch
-   * eine Farbe mitverwalten kann, muss mit dieser Klasse die Verknï¿½pfung
+   * eine Farbe mitverwalten kann, muss mit dieser Klasse die Verknüpfung
    * modelliert werden.
    * graphic.fill() durch graphic.draw() ersetzt von Uwe Debacher am 5.12.2003
    */

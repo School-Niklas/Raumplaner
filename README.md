@@ -145,3 +145,12 @@ Erstellen Sie für die Klasse Stuhl einen Konstruktor, der es erlaubt, die x- un
 
 ### A2.2
 Erstellen für die Klasse Tisch einen Konstruktor, der es erlaubt neben der x- und y-Position auch eine Farbe anzugeben. 
+
+### A3.1
+Erstelle in der Klasse Tisch eine Methode bewegeDiagonal(int x, int y), die den Tisch um die angegebenen x- und y-Werte versetzt. 
+
+### A3.2
+Überschreibe in der Klasse Tisch die Methode bewegeHorizontal(int x) mit einer Methode, die den Tisch immer um 100 Pixel versetzt. Achtung: Überschreiben heißt in der OOP, dass die alte Methode erhalten bleibt!
+
+### A4.1
+Erstellen Sie weitere Möbelklassen mit einem Erscheinungsbild, das den Normzeichen entspricht: Schrank, Bett, Regal, Sessel, Sofa, usw.

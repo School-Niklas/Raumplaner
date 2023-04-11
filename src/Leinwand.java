@@ -32,8 +32,7 @@ import javax.swing.JPanel;
  *
  * @version: 1.7 (5.12.2003)
  */
-public class Leinwand
-{
+public abstract class Leinwand extends Moebel {
   // Hinweis: Die Implementierung dieser Klasse (insbesondere die
   // Verwaltung der Farben und Identit�ten der Figuren) ist etwas
   // komplizierter als notwendig. Dies ist absichtlich so, weil damit 
@@ -45,7 +44,7 @@ public class Leinwand
 
   /**
    * Fabrikmethode, die eine Referenz auf das einzige Exemplar
-   * dieser Klasse zur�ckliefert. Wenn es von einer Klasse nur
+   * dieser Klasse zurueckliefert. Wenn es von einer Klasse nur
    * genau ein Exemplar gibt, wird dieses als 'Singleton'
    * bezeichnet.
    */
@@ -54,7 +53,12 @@ public class Leinwand
     if (leinwandSingleton == null)
     {
       leinwandSingleton =
-        new Leinwand("M�belprojekt Grafik", 400, 400, Color.white);
+              new Leinwand("Moebelprojekt Grafik", 400, 400, Color.white) {
+                @Override
+                protected Shape gibAktuelleFigur() {
+                  return null;
+                }
+              };
     }
     leinwandSingleton.setzeSichtbarkeit(true);
     return leinwandSingleton;

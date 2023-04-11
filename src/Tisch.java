@@ -1,6 +1,4 @@
 import java.awt.Shape;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Rectangle2D;
 import java.awt.geom.Ellipse2D;
 
 
@@ -24,6 +22,7 @@ public class Tisch extends Moebel
         breite = 120;
         tiefe  = 100;
     }
+
     public Tisch()  {
         xPosition = 120;
         yPosition = 150;
@@ -34,11 +33,10 @@ public class Tisch extends Moebel
         tiefe  = 100;
     }
 
+
     protected Shape gibAktuelleFigur()
     {
-        // definieren
         Shape tisch = new Ellipse2D.Double(0 , 0, breite, tiefe);
-        
         return transformiere(tisch);
     }
 }

@@ -1,8 +1,5 @@
 import java.awt.Shape;
 import java.awt.geom.GeneralPath;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.AffineTransform;
-
 
 public class Stuhl extends Moebel
 {
@@ -21,9 +18,6 @@ public class Stuhl extends Moebel
         this.farbe = farbe;
         this.orientierung = orientierung;
         this.istSichtbar = istSichtbar;
-        breite = 40;
-        tiefe  = 40;
-    }
 
     public Stuhl() {
         xPosition = 160;
@@ -45,7 +39,7 @@ public class Stuhl extends Moebel
         stuhl.lineTo(0 , 0);
         // Das ist die Umrandung. Das Stuhl bekommt noch eine Lehne:
         stuhl.moveTo(0 , (breite/10+1));
-        stuhl.lineTo(breite, (breite/10+1));    
+        stuhl.lineTo(breite, (breite/10+1));
         // transformieren:
         return transformiere(stuhl);
     }

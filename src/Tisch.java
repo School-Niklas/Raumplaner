@@ -4,6 +4,24 @@ import java.awt.geom.Ellipse2D;
 
 public class Tisch extends Moebel
 {
+    private int xPosition;
+    private int yPosition;
+    private int orientierung;
+    private String farbe;
+    private boolean istSichtbar;
+    private final int breite;
+    private final int tiefe;
+    
+
+    public Tisch(int xPosition, int yPosition, String farbe, int orientierung, boolean istSichtbar) {
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
+        this.farbe = farbe;
+        this.orientierung = orientierung;
+        this.istSichtbar = istSichtbar;
+        breite = 120;
+        tiefe  = 100;
+    }
 
     public Tisch()  {
         xPosition = 120;
@@ -15,15 +33,6 @@ public class Tisch extends Moebel
         tiefe  = 100;
     }
 
-    public Tisch(int x, int y, String f) {
-        xPosition = x;
-        yPosition = y;
-        farbe = f;
-        orientierung = 0;
-        istSichtbar = false;
-        breite = 120;
-        tiefe  = 100;
-    }
 
     protected Shape gibAktuelleFigur()
     {
